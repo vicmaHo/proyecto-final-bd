@@ -1,5 +1,11 @@
 
-import javax.swing.JFrame;
+import com.formdev.flatlaf.FlatLightLaf;
+import view.VistaLogin;
+import view.VistaPrincipal;
+
+
+
+
 
 
 
@@ -9,10 +15,12 @@ import javax.swing.JFrame;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        JFrame vista = new view.VistaLogin();
-        vista.setVisible(true);
+    public static void main( String[] args ){
+      FlatLightLaf.setup(); // Sett del look and feel
+      
+      VistaLogin vista = new VistaLogin();
+      VistaPrincipal vista2 = new VistaPrincipal();
+      vista2.setVisible(true);
+      
     }
 }
