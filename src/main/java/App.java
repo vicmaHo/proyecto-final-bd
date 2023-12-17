@@ -1,7 +1,8 @@
 
 import com.formdev.flatlaf.FlatLightLaf;
 import view.VistaLogin;
-import view.VistaPrincipal;
+import view.VistaPrincipalAdmin;
+import view.VistaPrincipalVendedor;
 
 
 
@@ -16,11 +17,13 @@ import view.VistaPrincipal;
 public class App 
 {
     public static void main( String[] args ){
-      FlatLightLaf.setup(); // Sett del look and feel
+        FlatLightLaf.setup(); // Sett del look and feel
+
+        VistaLogin vista = new VistaLogin();
+        VistaPrincipalAdmin vista2 = new VistaPrincipalAdmin();
+        VistaPrincipalVendedor vistaVendedor = new VistaPrincipalVendedor();
       
-      VistaLogin vista = new VistaLogin();
-      VistaPrincipal vista2 = new VistaPrincipal();
-      vista2.setVisible(true);
-      
+        //vistaVendedor.setVisible(true);
+        vista2.setVisible(true);
     }
 }

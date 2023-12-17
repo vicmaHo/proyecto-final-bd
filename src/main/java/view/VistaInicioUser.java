@@ -41,7 +41,7 @@ public class VistaInicioUser extends javax.swing.JPanel {
         jLabel1.setText("Bienvenido a la aplicación para la gestión de prendas/inventario y pedidos.");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel2.setText("Has ingresado como un Vendedor, tiene acceso a las siguientes funcionalidades:");
+        jLabel2.setText("Has ingresado como un Vendedor, tienes acceso a las siguientes funcionalidades:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel3.setText("- Administración de Pedidos/Encargos");
@@ -55,7 +55,7 @@ public class VistaInicioUser extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel6.setText("- Administración de Colegios");
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img.jpeg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/imagen.jpeg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,7 +69,7 @@ public class VistaInicioUser extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addContainerGap(398, Short.MAX_VALUE))
+                        .addContainerGap(392, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)

@@ -67,7 +67,7 @@ public class VistaInicioAdmin extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel9.setText("- Generación y acceso a los Informes");
 
-        lbImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/img.jpeg"))); // NOI18N
+        lbImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/imagen.jpeg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

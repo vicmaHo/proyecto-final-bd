@@ -170,7 +170,7 @@
         <Component class="javax.swing.JLabel" name="lbImg">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/img/img.jpeg"/>
+              <Image iconType="3" name="/img/imagen.jpeg"/>
             </Property>
           </Properties>
           <AuxValues>

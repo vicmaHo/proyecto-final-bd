@@ -7,12 +7,13 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Victor
  */
-public class VistaPrincipal extends javax.swing.JFrame {
+public class VistaPrincipalVendedor extends javax.swing.JFrame {
     
     /**
      * Creates new form VistaPrincipal
@@ -20,33 +21,41 @@ public class VistaPrincipal extends javax.swing.JFrame {
     int xMouse, yMouse;
     
     
-    public VistaPrincipal() {
+    public VistaPrincipalVendedor() {
         initComponents();
         iniciarlizarContenido();
+        
     }
     
     public void hoverButtonsEntered(JButton boton){
-        boton.setBackground(new Color(156, 221, 240));
+        //boton.setBackground(new Color(156, 221, 240));
     }
     
     public void hoverButtonExited(JButton boton){
-        boton.setBackground(new Color(158, 255, 255));
+       // boton.setBackground(new Color(158, 255, 255));
     }
     
     // Cambio entre paneles (Implementacion temporal)
     private void iniciarlizarContenido(){
-        VistaInicioAdmin p1 = new VistaInicioAdmin();
-        p1.setSize(968, 617);
-        p1.setLocation(0,0);
+        agregarJPanel(new VistaInicioUser(), "INICIO");
+    }
+    
+    // metodo para resumir el mostrar paneles
+    private void agregarJPanel(JPanel p, String titulo){
+        p.setSize(968, 617);
+        p.setLocation(0,0);
         
         pnContenido.removeAll();
-        pnContenido.add(p1, BorderLayout.CENTER);
+        pnContenido.add(p, BorderLayout.CENTER);
         pnContenido.revalidate();
         pnContenido.repaint();
         
         //Cambio el titulo
-        lbTitulo.setText("INICIO");
+        lbTitulo.setText(titulo);
     }
+    
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,14 +70,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
         pnMenu = new javax.swing.JPanel();
         lbMenuTitle = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnEntregas = new javax.swing.JButton();
+        btnRegistroEntregas = new javax.swing.JButton();
+        btnEncargos = new javax.swing.JButton();
         btnClientes = new javax.swing.JButton();
         btnPrendas = new javax.swing.JButton();
+        btnUniformes = new javax.swing.JButton();
         btnColegios = new javax.swing.JButton();
-        btnProveedores = new javax.swing.JButton();
-        btnMateriales = new javax.swing.JButton();
-        btnInformes = new javax.swing.JButton();
-        btnRegistro = new javax.swing.JButton();
         pnTitulo = new javax.swing.JPanel();
         lbTitulo = new javax.swing.JLabel();
         lbBienvenida = new javax.swing.JLabel();
@@ -82,8 +89,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         pnBg.setBackground(new java.awt.Color(255, 255, 255));
 
-        pnMenu.setBackground(new java.awt.Color(204, 255, 255));
+        pnMenu.setBackground(new java.awt.Color(201, 239, 228));
         pnMenu.setPreferredSize(new java.awt.Dimension(300, 740));
+        pnMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbMenuTitle.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
         lbMenuTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -94,30 +102,57 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 lbMenuTitleMouseClicked(evt);
             }
         });
+        pnMenu.add(lbMenuTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 53, 288, -1));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        pnMenu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 85, 288, 10));
 
-        btnEntregas.setBackground(new java.awt.Color(158, 255, 255));
-        btnEntregas.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnEntregas.setText("Entregas/Pedidos");
-        btnEntregas.setBorder(null);
-        btnEntregas.setBorderPainted(false);
-        btnEntregas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEntregas.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRegistroEntregas.setBackground(new java.awt.Color(212, 255, 242));
+        btnRegistroEntregas.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnRegistroEntregas.setText("Registro de Encargos/Pedidos");
+        btnRegistroEntregas.setBorder(null);
+        btnRegistroEntregas.setBorderPainted(false);
+        btnRegistroEntregas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistroEntregas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnEntregasMouseEntered(evt);
+                btnRegistroEntregasMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnEntregasMouseExited(evt);
+                btnRegistroEntregasMouseExited(evt);
             }
         });
-        btnEntregas.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistroEntregas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntregasActionPerformed(evt);
+                btnRegistroEntregasActionPerformed(evt);
             }
         });
+        pnMenu.add(btnRegistroEntregas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 107, 300, 44));
 
-        btnClientes.setBackground(new java.awt.Color(158, 255, 255));
+        btnEncargos.setBackground(new java.awt.Color(212, 255, 242));
+        btnEncargos.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnEncargos.setText("Lista de Encargos/Pedidos");
+        btnEncargos.setBorder(null);
+        btnEncargos.setBorderPainted(false);
+        btnEncargos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEncargos.setMaximumSize(new java.awt.Dimension(58, 17));
+        btnEncargos.setMinimumSize(new java.awt.Dimension(58, 17));
+        btnEncargos.setPreferredSize(new java.awt.Dimension(58, 17));
+        btnEncargos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEncargosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEncargosMouseExited(evt);
+            }
+        });
+        btnEncargos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEncargosActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnEncargos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 300, 44));
+
+        btnClientes.setBackground(new java.awt.Color(212, 255, 242));
         btnClientes.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnClientes.setText("Clientes");
         btnClientes.setBorder(null);
@@ -139,8 +174,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 btnClientesActionPerformed(evt);
             }
         });
+        pnMenu.add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 300, 44));
 
-        btnPrendas.setBackground(new java.awt.Color(158, 255, 255));
+        btnPrendas.setBackground(new java.awt.Color(212, 255, 242));
         btnPrendas.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnPrendas.setText("Prendas");
         btnPrendas.setBorder(null);
@@ -162,8 +198,33 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 btnPrendasActionPerformed(evt);
             }
         });
+        pnMenu.add(btnPrendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 300, 44));
 
-        btnColegios.setBackground(new java.awt.Color(158, 255, 255));
+        btnUniformes.setBackground(new java.awt.Color(212, 255, 242));
+        btnUniformes.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnUniformes.setText("Uniformes");
+        btnUniformes.setBorder(null);
+        btnUniformes.setBorderPainted(false);
+        btnUniformes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUniformes.setMaximumSize(new java.awt.Dimension(58, 17));
+        btnUniformes.setMinimumSize(new java.awt.Dimension(58, 17));
+        btnUniformes.setPreferredSize(new java.awt.Dimension(58, 17));
+        btnUniformes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUniformesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUniformesMouseExited(evt);
+            }
+        });
+        btnUniformes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUniformesActionPerformed(evt);
+            }
+        });
+        pnMenu.add(btnUniformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 300, 44));
+
+        btnColegios.setBackground(new java.awt.Color(212, 255, 242));
         btnColegios.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnColegios.setText("Colegios");
         btnColegios.setBorder(null);
@@ -180,146 +241,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 btnColegiosMouseExited(evt);
             }
         });
-
-        btnProveedores.setBackground(new java.awt.Color(158, 255, 255));
-        btnProveedores.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnProveedores.setText("Proveedores");
-        btnProveedores.setBorder(null);
-        btnProveedores.setBorderPainted(false);
-        btnProveedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnProveedores.setMaximumSize(new java.awt.Dimension(58, 17));
-        btnProveedores.setMinimumSize(new java.awt.Dimension(58, 17));
-        btnProveedores.setPreferredSize(new java.awt.Dimension(58, 17));
-        btnProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnProveedoresMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnProveedoresMouseExited(evt);
-            }
-        });
-
-        btnMateriales.setBackground(new java.awt.Color(158, 255, 255));
-        btnMateriales.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnMateriales.setText("Materiales");
-        btnMateriales.setBorder(null);
-        btnMateriales.setBorderPainted(false);
-        btnMateriales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMateriales.setMaximumSize(new java.awt.Dimension(58, 17));
-        btnMateriales.setMinimumSize(new java.awt.Dimension(58, 17));
-        btnMateriales.setPreferredSize(new java.awt.Dimension(58, 17));
-        btnMateriales.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnMaterialesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnMaterialesMouseExited(evt);
-            }
-        });
-        btnMateriales.addActionListener(new java.awt.event.ActionListener() {
+        btnColegios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMaterialesActionPerformed(evt);
+                btnColegiosActionPerformed(evt);
             }
         });
+        pnMenu.add(btnColegios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 300, 44));
 
-        btnInformes.setBackground(new java.awt.Color(158, 255, 255));
-        btnInformes.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnInformes.setText("Informes");
-        btnInformes.setBorder(null);
-        btnInformes.setBorderPainted(false);
-        btnInformes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnInformes.setMaximumSize(new java.awt.Dimension(58, 17));
-        btnInformes.setMinimumSize(new java.awt.Dimension(58, 17));
-        btnInformes.setPreferredSize(new java.awt.Dimension(58, 17));
-        btnInformes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnInformesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnInformesMouseExited(evt);
-            }
-        });
-        btnInformes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInformesActionPerformed(evt);
-            }
-        });
-
-        btnRegistro.setBackground(new java.awt.Color(158, 255, 255));
-        btnRegistro.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnRegistro.setText("Registrar Usuarios");
-        btnRegistro.setBorder(null);
-        btnRegistro.setBorderPainted(false);
-        btnRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegistro.setMaximumSize(new java.awt.Dimension(58, 17));
-        btnRegistro.setMinimumSize(new java.awt.Dimension(58, 17));
-        btnRegistro.setPreferredSize(new java.awt.Dimension(58, 17));
-        btnRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnRegistroMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnRegistroMouseExited(evt);
-            }
-        });
-        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnMenuLayout = new javax.swing.GroupLayout(pnMenu);
-        pnMenu.setLayout(pnMenuLayout);
-        pnMenuLayout.setHorizontalGroup(
-            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnColegios, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnInformes, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnPrendas, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(pnMenuLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbMenuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        pnMenuLayout.setVerticalGroup(
-            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnMenuLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(lbMenuTitle)
-                .addGap(6, 6, 6)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(btnMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(btnProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(btnColegios, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(243, 243, 243)
-                        .addComponent(btnInformes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(btnPrendas, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMenuLayout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-
-        pnTitulo.setBackground(new java.awt.Color(153, 255, 255));
+        pnTitulo.setBackground(new java.awt.Color(201, 239, 228));
 
         lbTitulo.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         lbTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -493,97 +422,81 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.setLocation(x- xMouse,y- yMouse);
     }//GEN-LAST:event_pnHeaderMouseDragged
 
-    private void btnPrendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrendasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPrendasActionPerformed
-
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        // TODO add your handling code here:
+        agregarJPanel(new VistaClientes(), "CLIENTES");
     }//GEN-LAST:event_btnClientesActionPerformed
 
-    private void btnEntregasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntregasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEntregasActionPerformed
+    private void btnEncargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncargosActionPerformed
+        agregarJPanel(new VistaEncargos(), "ADMINISTRACIÓN DE ENCARGOS");
+    }//GEN-LAST:event_btnEncargosActionPerformed
 
-    private void btnEntregasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntregasMouseEntered
-        hoverButtonsEntered(btnEntregas);//9CDDF0
-    }//GEN-LAST:event_btnEntregasMouseEntered
+    private void btnRegistroEntregasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroEntregasActionPerformed
+        agregarJPanel(new VistaRegistroEncargos(), "REGISTRO ENCARGOS");
+    }//GEN-LAST:event_btnRegistroEntregasActionPerformed
 
-    private void btnEntregasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntregasMouseExited
-        hoverButtonExited(btnEntregas); //9EFFFF
-    }//GEN-LAST:event_btnEntregasMouseExited
+    private void btnRegistroEntregasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroEntregasMouseEntered
+        hoverButtonsEntered(btnRegistroEntregas);//9CDDF0
+    }//GEN-LAST:event_btnRegistroEntregasMouseEntered
 
-    private void btnInformesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInformesActionPerformed
+    private void btnRegistroEntregasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroEntregasMouseExited
+        hoverButtonExited(btnRegistroEntregas); //9EFFFF
+    }//GEN-LAST:event_btnRegistroEntregasMouseExited
 
-    private void btnMaterialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaterialesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMaterialesActionPerformed
+    private void btnColegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColegiosActionPerformed
+        agregarJPanel(new VistaColegios(), "COLEGIOS");
+    }//GEN-LAST:event_btnColegiosActionPerformed
+
+    private void btnEncargosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEncargosMouseEntered
+        hoverButtonsEntered(btnEncargos);
+    }//GEN-LAST:event_btnEncargosMouseEntered
+
+    private void btnEncargosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEncargosMouseExited
+        hoverButtonExited(btnEncargos);
+    }//GEN-LAST:event_btnEncargosMouseExited
 
     private void btnClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseEntered
-        btnClientes.setBackground(new Color(156, 221, 240));
+        hoverButtonsEntered(btnClientes);
     }//GEN-LAST:event_btnClientesMouseEntered
 
     private void btnClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseExited
-        btnClientes.setBackground(new Color(158, 255, 255));
+        hoverButtonExited(btnClientes);
     }//GEN-LAST:event_btnClientesMouseExited
 
     private void btnPrendasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrendasMouseEntered
-        btnPrendas.setBackground(new Color(156, 221, 240));
+        hoverButtonsEntered(btnPrendas);
     }//GEN-LAST:event_btnPrendasMouseEntered
 
     private void btnPrendasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrendasMouseExited
-        btnPrendas.setBackground(new Color(158, 255, 255));
+        hoverButtonExited(btnPrendas);
     }//GEN-LAST:event_btnPrendasMouseExited
 
+    private void btnUniformesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUniformesMouseEntered
+        hoverButtonsEntered(btnUniformes);
+    }//GEN-LAST:event_btnUniformesMouseEntered
+
+    private void btnUniformesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUniformesMouseExited
+        hoverButtonExited(btnUniformes);
+    }//GEN-LAST:event_btnUniformesMouseExited
+
     private void btnColegiosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnColegiosMouseEntered
-        btnColegios.setBackground(new Color(156, 221, 240));
+        hoverButtonsEntered(btnColegios);
     }//GEN-LAST:event_btnColegiosMouseEntered
 
     private void btnColegiosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnColegiosMouseExited
-        btnColegios.setBackground(new Color(158, 255, 255));
+        hoverButtonExited(btnColegios);
     }//GEN-LAST:event_btnColegiosMouseExited
 
-    private void btnProveedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseEntered
-        btnProveedores.setBackground(new Color(156, 221, 240));
-    }//GEN-LAST:event_btnProveedoresMouseEntered
-
-    private void btnProveedoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseExited
-        btnProveedores.setBackground(new Color(158, 255, 255));
-    }//GEN-LAST:event_btnProveedoresMouseExited
-
-    private void btnMaterialesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaterialesMouseEntered
-        btnMateriales.setBackground(new Color(156, 221, 240));
-    }//GEN-LAST:event_btnMaterialesMouseEntered
-
-    private void btnMaterialesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaterialesMouseExited
-        btnMateriales.setBackground(new Color(158, 255, 255));
-    }//GEN-LAST:event_btnMaterialesMouseExited
-
-    private void btnInformesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseEntered
-        hoverButtonsEntered(btnInformes);
-    }//GEN-LAST:event_btnInformesMouseEntered
-
-    private void btnInformesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseExited
-        hoverButtonExited(btnInformes);
-    }//GEN-LAST:event_btnInformesMouseExited
-
-    private void btnRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMouseEntered
-        hoverButtonsEntered(btnRegistro);
-    }//GEN-LAST:event_btnRegistroMouseEntered
-
-    private void btnRegistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMouseExited
-        hoverButtonExited(btnRegistro);
-    }//GEN-LAST:event_btnRegistroMouseExited
-
-    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistroActionPerformed
-
     private void lbMenuTitleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbMenuTitleMouseClicked
-        // IR A AL CONTENIDO INICIAL
+        agregarJPanel(new VistaInicioAdmin(), "INICIO");
     }//GEN-LAST:event_lbMenuTitleMouseClicked
+
+    private void btnPrendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrendasActionPerformed
+        agregarJPanel(new VistaPrendas(), "PRENDAS");
+    }//GEN-LAST:event_btnPrendasActionPerformed
+
+    private void btnUniformesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUniformesActionPerformed
+        agregarJPanel(new VistaUniformes(), "UNIFORMES");
+    }//GEN-LAST:event_btnUniformesActionPerformed
 
     
     /**
@@ -603,14 +516,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipalVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipalVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipalVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipalVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -619,7 +544,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaPrincipal().setVisible(true);
+                new VistaPrincipalVendedor().setVisible(true);
             }
         });
     }
@@ -627,13 +552,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnColegios;
-    private javax.swing.JButton btnEntregas;
+    private javax.swing.JButton btnEncargos;
     private javax.swing.JPanel btnExit;
-    private javax.swing.JButton btnInformes;
-    private javax.swing.JButton btnMateriales;
     private javax.swing.JButton btnPrendas;
-    private javax.swing.JButton btnProveedores;
-    private javax.swing.JButton btnRegistro;
+    private javax.swing.JButton btnRegistroEntregas;
+    private javax.swing.JButton btnUniformes;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lbBienvenida;
     public javax.swing.JLabel lbExit;
