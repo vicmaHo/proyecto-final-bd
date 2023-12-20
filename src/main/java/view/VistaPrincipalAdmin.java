@@ -740,12 +740,12 @@ public class VistaPrincipalAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistroUsers;
     private javax.swing.JButton btnUniformes;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lbBienvenida;
+    public javax.swing.JLabel lbBienvenida;
     public javax.swing.JLabel lbExit;
     private javax.swing.JLabel lbMenuTitle;
-    private javax.swing.JLabel lbTitulo;
+    public javax.swing.JLabel lbTitulo;
     private javax.swing.JPanel pnBg;
-    private javax.swing.JPanel pnContenido;
+    public javax.swing.JPanel pnContenido;
     private javax.swing.JPanel pnHeader;
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnTitulo;

@@ -8,7 +8,8 @@ package model;
  */
 public class Suministro {
     
-   
+//    private Proveedor;
+//    private MateriasPrimas;
    private String NIT;
    private int codPri;
 
