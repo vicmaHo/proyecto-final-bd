@@ -98,6 +98,10 @@ public class Controlador implements ActionListener, MouseListener {
         menuRegistroUsuarios.btnAgregar.addActionListener(this);
         menuRegistroUsuarios.btnEliminarUsuario.addActionListener(this);
         menuRegistroUsuarios.btnModificarUsuario.addActionListener(this);
+
+        // Registro de encargos
+        vistaRegistroEncargos.btnFinalizar.addActionListener(this);
+
     }
     
     //METODO DE LOGIN
@@ -127,6 +131,17 @@ public class Controlador implements ActionListener, MouseListener {
         }
         
     }
+
+    // MEtodo para iniciar/actualiza COmboBoxes
+    private void actualizarComboBoxes(){
+        vistaRegistroEncargos.cbClientes.setModel(new javax.swing.DefaultComboBoxModel<>(modelo.obtenerDocumentosClientes()));
+        vistaRegistroEncargos.cbNombreColegio.setModel(new javax.swing.DefaultComboBoxModel<>(modelo.obtenerNombresColegios()));
+        // menuLista.lsLista.setModel(new javax.swing.DefaultComboBoxModel<>(model.getNombresDulces()));
+    }
+
+
+    // Metodos del menu Registro Encargos
+
 
     //METODOS DEL MENU USUARIO
 
@@ -218,6 +233,8 @@ public class Controlador implements ActionListener, MouseListener {
     public void iniciar(){
         agregarListeners();
         login.setVisible(true);
+        login.txtUsername.setText("admin");
+        login.txtPassword.setText("admin");
     }
 
 
@@ -281,6 +298,7 @@ public class Controlador implements ActionListener, MouseListener {
         if(isAdmin){
             if (e.getSource()==vistaPrincipalAdmin.btnRegistroEntregas) {
                 agregarJPanel(vistaRegistroEncargos, "REGISTRO DE ENCARGOS");
+                actualizarComboBoxes();
                 
             }else if (e.getSource()==vistaPrincipalAdmin.btnEncargos) {
                 agregarJPanel(menuEncargos, "ADMINISTRACION DE ENCARGOS");

@@ -77,9 +77,10 @@ public class VistaRegistroEncargos extends javax.swing.JPanel {
         cbNombreColegio = new javax.swing.JComboBox<>();
         txtCaracteristicasUniforme = new javax.swing.JTextField();
 
-        dateChooser1.setDateFormat("yyyy-MMMM-dd");
+        dateChooser1.setDateFormat("yyyy-MM-dd");
         dateChooser1.setTextRefernce(dateFechaEncargo);
 
+        dateChooser2.setDateFormat("yyyy-MM-dd");
         dateChooser2.setTextRefernce(dateFechaEntrega);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
