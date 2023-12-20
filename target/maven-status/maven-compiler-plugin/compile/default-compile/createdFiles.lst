@@ -39,6 +39,7 @@ view\VistaPrincipalVendedor$10.class
 view\VistaMateriales.class
 view\VistaPrincipalAdmin$6.class
 model\Telefono.class
+model\Usuario.class
 view\VistaPrincipalVendedor$3.class
 view\VistaPrincipalAdmin$10.class
 view\VistaPrincipalAdmin.class
@@ -79,6 +80,7 @@ view\datechooser\DateChooser.class
 model\dao\MateriasPrimasDAO.class
 view\VistaPrincipalAdmin$18.class
 model\Cliente.class
+model\dao\implementaciones\UsuarioDaoImpl.class
 view\datechooser\DateChooser$4.class
 view\viewTest.class
 view\VistaPrincipalAdmin$4.class
@@ -118,6 +120,7 @@ view\VistaPrendas.class
 view\VistaPrincipalAdmin$26.class
 view\VistaPrincipalVendedor$6.class
 view\datechooser\Button.class
+model\dao\UsuarioDAO.class
 view\datechooser\Prueba$1.class
 model\dao\implementaciones\MateriasPrimasDAOImpl.class
 view\VistaPrincipalAdmin$14.class

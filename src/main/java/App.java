@@ -15,6 +15,7 @@ import view.VistaPrincipalVendedor;
 import view.VistaProveedores;
 import view.VistaRegistroEncargos;
 import view.VistaRegistroUsuarios;
+import view.VistaSuministro;
 import view.VistaUniformes;
 
 
@@ -44,6 +45,7 @@ public class App
         VistaColegios menuColegios = new VistaColegios();
         VistaProveedores menuProveedores = new VistaProveedores();
         VistaMateriales menuMateriales = new VistaMateriales();
+        VistaSuministro menuSuministro = new VistaSuministro();
         VistaInformes menuInformes = new VistaInformes();
         VistaRegistroUsuarios menuRegistroUsuarios = new VistaRegistroUsuarios();
         Modelo modelo = new Modelo();
@@ -51,7 +53,7 @@ public class App
         Controlador controlador = new Controlador( login,  vistaPrincipalAdmin,  vistaPrincipalVendedor,
                     vistaRegistroEncargos,  menuEncargos,  menuClientes,
          menuPrendas,  menuUniformes,  menuColegios,
-         menuProveedores,  menuMateriales,  menuInformes,
+         menuProveedores,  menuMateriales, menuSuministro , menuInformes, 
          menuRegistroUsuarios,  modelo);
 
         controlador.iniciar();

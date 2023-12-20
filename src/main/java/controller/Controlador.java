@@ -21,6 +21,8 @@ import view.*;
  */
 public class Controlador implements ActionListener, MouseListener {
     //Todas las vistas y el modelo
+
+    //faltan las vistas de inicio
     VistaLogin login;
     VistaPrincipalAdmin vistaPrincipalAdmin;
     VistaPrincipalVendedor vistaPrincipalVendedor;
@@ -32,6 +34,7 @@ public class Controlador implements ActionListener, MouseListener {
     VistaColegios menuColegios;
     VistaProveedores menuProveedores;
     VistaMateriales menuMateriales;
+    VistaSuministro menuSuministros;
     VistaInformes menuInformes;
     VistaRegistroUsuarios menuRegistroUsuarios;
     Modelo modelo;
@@ -43,7 +46,7 @@ public class Controlador implements ActionListener, MouseListener {
     public Controlador(VistaLogin login, VistaPrincipalAdmin vistaPrincipalAdmin, VistaPrincipalVendedor vistaPrincipalVendedor,
             VistaRegistroEncargos vistaRegistroEncargos, VistaEncargos menuEncargos, VistaClientes menuClientes,
             VistaPrendas menuPrendas, VistaUniformes menuUniformes, VistaColegios menuColegios,
-            VistaProveedores menuProveedores, VistaMateriales menuMateriales, VistaInformes menuInformes,
+            VistaProveedores menuProveedores, VistaMateriales menuMateriales, VistaSuministro menuSuministros ,VistaInformes menuInformes,
             VistaRegistroUsuarios menuRegistroUsuarios, Modelo modelo) {
         this.login = login;
         this.vistaPrincipalAdmin = vistaPrincipalAdmin;
@@ -51,11 +54,12 @@ public class Controlador implements ActionListener, MouseListener {
         this.vistaRegistroEncargos = vistaRegistroEncargos;
         this.menuEncargos = menuEncargos;
         this.menuClientes = menuClientes;
-        this.menuPrendas = menuPrendas;
+        this.menuPrendas = menuPrendas; 
         this.menuUniformes = menuUniformes;
         this.menuColegios = menuColegios;
         this.menuProveedores = menuProveedores;
         this.menuMateriales = menuMateriales;
+        this.menuSuministros = menuSuministros;
         this.menuInformes = menuInformes;
         this.menuRegistroUsuarios = menuRegistroUsuarios;
         this.modelo = modelo;
@@ -65,6 +69,28 @@ public class Controlador implements ActionListener, MouseListener {
 
         //Login
         login.btnLoginLB.addMouseListener(this);
+
+        //Vista PrincipalAdmin
+        vistaPrincipalAdmin.btnRegistroEntregas.addMouseListener(this);
+        vistaPrincipalAdmin.btnEncargos.addMouseListener(this);
+        vistaPrincipalAdmin.btnClientes.addMouseListener(this);
+        vistaPrincipalAdmin.btnPrendas.addMouseListener(this);
+        vistaPrincipalAdmin.btnUniformes.addMouseListener(this);
+        vistaPrincipalAdmin.btnColegios.addMouseListener(this);
+        vistaPrincipalAdmin.btnProveedores.addMouseListener(this);
+        vistaPrincipalAdmin.btnMateriales.addMouseListener(this);
+        vistaPrincipalAdmin.btnRegistroMateriales.addMouseListener(this);
+        vistaPrincipalAdmin.btnInformes.addMouseListener(this);
+        vistaPrincipalAdmin.btnRegistroUsers.addMouseListener(this);
+
+        //vistaPrincipalVendedor
+        vistaPrincipalVendedor.btnRegistroEntregas.addMouseListener(this);
+        vistaPrincipalVendedor.btnEncargos.addMouseListener(this);
+        vistaPrincipalVendedor.btnClientes.addMouseListener(this);
+        vistaPrincipalVendedor.btnPrendas.addMouseListener(this);
+        vistaPrincipalVendedor.btnUniformes.addMouseListener(this);
+        vistaPrincipalVendedor.btnColegios.addMouseListener(this);
+
     }
     
     public void login(String nombre, String contrasena){
@@ -135,13 +161,61 @@ public class Controlador implements ActionListener, MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        System.out.println(isAdmin);
         //parte de login
         if (e.getSource()==login.btnLoginLB) {
             login(login.txtUsername.getText(), login.txtPassword.getText());
             
         }
+        //CAMBIO ENTRE PANELES
+        if(isAdmin){
+            if (e.getSource()==vistaPrincipalAdmin.btnRegistroEntregas) {
+                agregarJPanel(vistaRegistroEncargos, "REGISTRO DE ENCARGOS");
+                
+            }else if (e.getSource()==vistaPrincipalAdmin.btnEncargos) {
+                agregarJPanel(menuEncargos, "ADMINISTRACION DE ENCARGOS");
 
-        //cambio entre paneles
+            }else if(e.getSource()==vistaPrincipalAdmin.btnClientes) {
+                agregarJPanel(menuClientes, "CLIENTES");
+         
+            }else if (e.getSource()==vistaPrincipalAdmin.btnPrendas) {
+                agregarJPanel(menuPrendas, "PRENDAS");
+                
+            }else if (e.getSource()==vistaPrincipalAdmin.btnUniformes) {
+                agregarJPanel(menuUniformes, "UNIFORMES");
+                
+            }else if (e.getSource()==vistaPrincipalAdmin.btnColegios) {
+                agregarJPanel(menuColegios, "COLEGIOS");
+                
+            }else if (e.getSource()==vistaPrincipalAdmin.btnProveedores) {
+                agregarJPanel(menuProveedores, "PROVEEDORES");
+                
+            }else if (e.getSource()==vistaPrincipalAdmin.btnMateriales) {
+                System.out.println("Entro en materiales");
+                agregarJPanel(menuMateriales, "MATERIAS PRIMAS");   
+                
+            }else if(e.getSource()==vistaPrincipalAdmin.btnRegistroMateriales){
+                agregarJPanel(menuSuministros, "REGISTRO DE SUMINISTROS");
+            }else if(e.getSource()==vistaPrincipalAdmin.btnInformes){
+                agregarJPanel(menuInformes, "INFORMES");
+            }else if(e.getSource()==vistaPrincipalAdmin.btnRegistroUsers){
+                agregarJPanel(menuRegistroUsuarios, "REGISTRO DE USUARIOS");
+            }
+        }else{
+            if (e.getSource()==vistaPrincipalVendedor.btnRegistroEntregas) {
+                agregarJPanel(vistaRegistroEncargos, "REGISTRO DE ENCARGOS");
+            }else if(e.getSource()==vistaPrincipalVendedor.btnEncargos){
+                agregarJPanel(menuEncargos, "ADMINISTRACION DE ENCARGOS");
+            }else if (e.getSource()==vistaPrincipalVendedor.btnClientes) {
+                agregarJPanel(menuClientes, "CLIENTES");
+            }else if (e.getSource()==vistaPrincipalVendedor.btnPrendas) {
+                agregarJPanel(menuPrendas, "PRENDAS");
+            }else if (e.getSource()==vistaPrincipalVendedor.btnUniformes) {
+                agregarJPanel(menuUniformes, "UNIFORMES");
+            }else if (e.getSource()==vistaPrincipalVendedor.btnColegios) {
+                agregarJPanel(menuColegios, "COLEGIOS");
+            }
+        }
         
     }
 
