@@ -42,6 +42,7 @@ public class ProveedorDAOImpl implements ProveedorDAO {
             stat.setString(1, proveedor.getNombre());
             stat.setString(2, proveedor.getNombreContacto());
             stat.setString(3, proveedor.getProductoSuministra());
+            stat.setString(4, proveedor.getNIT());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

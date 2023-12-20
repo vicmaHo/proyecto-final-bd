@@ -4,11 +4,14 @@ package model.dao.implementaciones;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Cliente;
 import model.Colegio;
+import model.dao.ClienteDAO;
 import model.dao.ColegioDAO;
 
 public class ColegioDAOImpl implements ColegioDAO{
-    private final String INSERT = "INSERT into Colegio (IdColegio , Direccion , Nombre ) VALUES (?,?,?);";
+    private final String INSERT = "INSERT into Colegio (Direccion , Nombre ) VALUES (?,?);";
     private final String UPDATE = "UPDATE Colegio SET Direccion = ?, Nombre = ? WHERE IdColegio = ?;";
     private final String DELETE = "DELETE FROM Colegio WHERE IdColegio = ?;";
 
@@ -25,9 +28,8 @@ public class ColegioDAOImpl implements ColegioDAO{
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(INSERT);
-            //REVISAR ESTA VAINA NO ME CONVENCE
-            stat.setString(2, t.getDireccion());
-            stat.setString(3, t.getNombre());
+            stat.setString(1, t.getDireccion());
+            stat.setString(2, t.getNombre());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -41,6 +43,7 @@ public class ColegioDAOImpl implements ColegioDAO{
             stat = conn.prepareStatement(UPDATE);
             stat.setString(1, t.getDireccion());
             stat.setString(2, t.getNombre());
+            stat.setInt(3, t.getIdColegio());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -109,6 +112,23 @@ public class ColegioDAOImpl implements ColegioDAO{
             System.out.println(e.getMessage());
         }
         return colegio;
+    }
+
+    public static void main(String[] args) {
+        String URL = "jdbc:postgresql://localhost:5432/bd_proyecto";
+        String USER = "postgres";
+        String PASS = "admin";
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL, USER, PASS);
+            ColegioDAO dao = new ColegioDAOImpl(conn);
+
+
+           System.out.println(dao.getById(10).getNombre());
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 

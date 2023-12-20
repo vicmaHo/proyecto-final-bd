@@ -11,7 +11,7 @@ import model.dao.MateriasPrimasDAO;
 
 public class MateriasPrimasDAOImpl implements MateriasPrimasDAO {
 
-    private final String INSERT = "INSERT into MateriasPrimas  (CodPri, Tipo, CantPri, UnidadMedida, DescripcionPri ) VALUES (?,?,?,?,?);";
+    private final String INSERT = "INSERT into MateriasPrimas  (Tipo, CantPri, UnidadMedida, DescripcionPri ) VALUES (?,?,?,?);";
     private final String UPDATE = "UPDATE MateriasPrimas SET Tipo = ?, CantPri = ?, UnidadMedida = ?, DescripcionPri = ? WHERE CodPri = ?;";
     private final String DELETE = "DELETE FROM MateriasPrimas WHERE CodPri = ?;";
 
@@ -28,10 +28,10 @@ public class MateriasPrimasDAOImpl implements MateriasPrimasDAO {
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(INSERT);
-            stat.setInt(1, t.getCodPri());
-            stat.setString(2, t.getTipo());
-            stat.setString(3, t.getCantPri());
-            stat.setString(4, t.getUnidadMedida());
+            stat.setString(1, t.getTipo());
+            stat.setString(2, t.getCantPri());
+            stat.setString(3, t.getUnidadMedida());
+            stat.setString(4, t.getDescripcionPri());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -47,7 +47,7 @@ public class MateriasPrimasDAOImpl implements MateriasPrimasDAO {
             stat.setString(2, t.getCantPri());
             stat.setString(3, t.getUnidadMedida());
             stat.setString(4, t.getDescripcionPri());
-            stat.setString(5, t.getDescripcionPri());
+            stat.setInt(5, t.getCodPri());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

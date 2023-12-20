@@ -20,8 +20,8 @@ import model.dao.UniformeDAO;
 public class UniformeDAOImpl implements UniformeDAO {
 
     private final String INSERT = "INSERT INTO uniforme (idprenda, tipo, idcolegio, caracteristicasPropias) VALUES (?, ?, ?, ?);";
-    private final String UPDATE = "UPDATE uniforme SET idprenda=?, tipo=?, idcolegio=?, caracteristicasPropias=? WHERE idprenda=? AND idcolegio=?;";
-    private final String DELETE = "DELETE FROM uniforme WHERE idprenda=? AND idcolegio=?;";
+    private final String UPDATE = "UPDATE uniforme SET tipo=?, idcolegio=?, caracteristicasPropias=? WHERE idprenda=?";
+    private final String DELETE = "DELETE FROM uniforme WHERE idprenda=?;";
     private final String GETALL = "SELECT * FROM uniforme;";
     private final String GETONE = "SELECT * FROM uniforme WHERE idprenda=?;";
 
@@ -47,10 +47,10 @@ public class UniformeDAOImpl implements UniformeDAO {
     @Override
     public void modificar(Uniforme uniforme) {
         try (PreparedStatement stat = conn.prepareStatement(UPDATE)) {
-            stat.setInt(1, uniforme.getIdprenda());
-            stat.setString(2, uniforme.getTipo());
-            stat.setInt(3, uniforme.getIdcolegio());
-            stat.setString(4, uniforme.getCaracteristicasPropias());
+            stat.setString(1, uniforme.getTipo());
+            stat.setInt(2, uniforme.getIdcolegio());
+            stat.setString(3, uniforme.getCaracteristicasPropias());
+            stat.setInt(4, uniforme.getIdprenda());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -61,7 +61,6 @@ public class UniformeDAOImpl implements UniformeDAO {
     public void eliminar(Uniforme uniforme) {
         try (PreparedStatement stat = conn.prepareStatement(DELETE)) {
             stat.setInt(1, uniforme.getIdprenda());
-            stat.setInt(2, uniforme.getIdcolegio());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

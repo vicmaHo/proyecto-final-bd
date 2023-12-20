@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.Date;
+
+import org.postgresql.shaded.com.ongres.stringprep.StringPrep;
 public class Encargo {
     private int numPedido; // Llave primaria
     private Date fechaEncargo;
@@ -9,11 +11,11 @@ public class Encargo {
     private String estado;
     private double abono;
     private double valorTotal;
-    private int documento; // Llave foránea
+    private String documento; // Llave foránea
 
     // Constructor que recibe todos los atributos
     public Encargo(int numPedido, Date fechaEncargo, Date fechaEntrega, String anotacion,
-                   String estado, double abono, double valorTotal, int documento) {
+                   String estado, double abono, double valorTotal, String documento) {
         this.numPedido = numPedido;
         this.fechaEncargo = fechaEncargo;
         this.fechaEntrega = fechaEntrega;
@@ -25,7 +27,7 @@ public class Encargo {
     }
 
     public Encargo(Date fechaEncargo, Date fechaEntrega, String anotacion,
-                   String estado, double abono, double valorTotal, int documento) {
+                   String estado, double abono, double valorTotal, String documento) {
         this.fechaEncargo = fechaEncargo;
         this.fechaEntrega = fechaEntrega;
         this.anotacion = anotacion;
@@ -99,11 +101,11 @@ public class Encargo {
     }
 
     // Métodos set y get para documento
-    public void setDocumento(int documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 

@@ -10,5 +10,6 @@ import model.Suministro;
 public interface SuministroDAO extends DAO<Suministro> {
     
     public Suministro getByIdCompuesto(String NIT, int codPri);
+    public void modificar(Suministro suministroNuevo, Suministro suministroViejo);
     
 }

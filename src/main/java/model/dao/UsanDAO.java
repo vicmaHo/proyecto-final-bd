@@ -10,5 +10,6 @@ import model.Usan;
 public interface UsanDAO extends DAO<Usan>{
     
     public Usan getByIdCompuesto(int idPrenda, int codPri);
+    public void modificar(Usan usanNuevo, Usan usanViejo);
     
 }

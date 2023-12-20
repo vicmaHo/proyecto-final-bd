@@ -137,8 +137,8 @@ public class Modelo {
     public void eliminarSuministro(Suministro suministro) {
         suministroDAO.eliminar(suministro);
     }
-    public void modificarSuministro(Suministro suministro) {
-        suministroDAO.modificar(suministro);
+    public void modificarSuministro(Suministro suministroNuevo, Suministro suministroViejo) {
+        suministroDAO.modificar(suministroNuevo, suministroViejo);
     }
     public ArrayList<Suministro> obtenerTodosSuministros() {
         return (ArrayList<Suministro>) suministroDAO.obtenerTodos();

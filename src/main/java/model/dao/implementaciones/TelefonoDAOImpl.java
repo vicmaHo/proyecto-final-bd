@@ -17,7 +17,7 @@ import model.dao.TelefonoDAO;
 public class TelefonoDAOImpl implements TelefonoDAO {
 
     private final String INSERT = "INSERT INTO telefono (Documento, telefono) VALUES (?, ?);";
-    private final String UPDATE = "UPDATE telefono SET Documento=?, telefono=? WHERE Documento=? ";
+    private final String UPDATE = "UPDATE telefono SET telefono=? WHERE Documento = ? ";
     private final String DELETE = "DELETE FROM telefono WHERE Documento=?;";
     private final String GETALL = "SELECT * FROM telefono;";
     private final String GETONE = "SELECT * FROM telefono WHERE Documento=?;";
@@ -42,8 +42,8 @@ public class TelefonoDAOImpl implements TelefonoDAO {
     @Override
     public void modificar(Telefono telefono) {
         try (PreparedStatement stat = conn.prepareStatement(UPDATE)) {
-            stat.setString(1, telefono.getDocumento());
-            stat.setString(2, telefono.getTelefono());
+            stat.setString(2, telefono.getDocumento());
+            stat.setString(1, telefono.getTelefono());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

@@ -41,10 +41,12 @@ public class SuministroDAOImpl implements SuministroDAO {
     }
 
     @Override
-    public void modificar(Suministro suministro) {
+    public void modificar(Suministro suministroNuevo, Suministro suministroViejo) {
         try (PreparedStatement stat = conn.prepareStatement(UPDATE)) {
-            stat.setString(1, suministro.getNIT());
-            stat.setInt(2, suministro.getCodPri());
+            stat.setString(1, suministroNuevo.getNIT());
+            stat.setInt(2, suministroNuevo.getCodPri());
+            stat.setString(3, suministroViejo.getNIT());
+            stat.setInt(4, suministroViejo.getCodPri());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -103,5 +105,10 @@ public class SuministroDAOImpl implements SuministroDAO {
             System.out.println(ex.getMessage());
         }
             return null;
+    }
+
+    @Override
+    public void modificar(Suministro t) {
+        
     }
 }

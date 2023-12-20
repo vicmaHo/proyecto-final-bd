@@ -17,7 +17,7 @@ import model.dao.UsanDAO;
 public class UsanDAOImpl implements UsanDAO {
 
     private final String INSERT = "INSERT INTO usan (idprenda, codPri) VALUES (?, ?);";
-    private final String UPDATE = "UPDATE usan SET idprenda=? WHERE idprenda=? AND codPri=?;";
+    private final String UPDATE = "UPDATE usan SET idprenda=?, codPri=? WHERE idprenda=? AND codPri=?;";
     private final String DELETE = "DELETE FROM usan WHERE idprenda=? AND codPri=?;";
     private final String GETALL = "SELECT * FROM usan;";
     private final String GETONE = "SELECT * FROM usan WHERE idprenda=? AND codPri=?;";
@@ -40,12 +40,12 @@ public class UsanDAOImpl implements UsanDAO {
     }
 
     @Override
-    public void modificar(Usan usan) {
+    public void modificar(Usan usanNuevo, Usan usanViejo) {
         try (PreparedStatement stat = conn.prepareStatement(UPDATE)) {
-            stat.setInt(1, usan.getIdprenda());
-            stat.setInt(2, usan.getCodPri());
-            stat.setInt(5, usan.getIdprenda());
-            stat.setInt(6, usan.getCodPri());
+            stat.setInt(1, usanNuevo.getIdprenda());
+            stat.setInt(2, usanNuevo.getCodPri());
+            stat.setInt(3, usanViejo.getIdprenda());
+            stat.setInt(4, usanViejo.getCodPri());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -103,5 +103,11 @@ public class UsanDAOImpl implements UsanDAO {
             System.out.println(ex.getMessage());
         }
         return null;
+    }
+
+    @Override
+    public void modificar(Usan t) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificar'");
     }
 }
