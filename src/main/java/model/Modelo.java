@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.postgresql.Driver;
+import org.postgresql.shaded.com.ongres.stringprep.StringPrep;
 
 import model.dao.ClienteDAO;
 import model.dao.ColegioDAO;
@@ -84,6 +85,32 @@ public class Modelo {
     }
 
 
+    // Metodos especiales
+    public String[] obtenerDocumentosClientes(){
+        List<Cliente> clientes = clienteDAO.obtenerTodos();
+
+        // Crear un array de strings para almacenar los documentos
+        String[] documentos = new String[clientes.size()];
+
+        // Llenar el array con los documentos de los clientes
+        for (int i = 0; i < clientes.size(); i++) {
+            documentos[i] = clientes.get(i).getDocumento();
+        }
+
+        return documentos;
+    }
+
+    public String[] obtenerNombresColegios(){
+        List<Colegio> colegios = colegioDAO.obtenerTodos();
+        String[] nombres = new String[colegios.size()];
+
+        for (int i = 0; i < colegios.size(); i++) {
+            nombres[i] = colegios.get(i).getNombre();
+        }
+
+        return nombres;
+    }
+
     //Metodos de consultas
 
     // Usuario
@@ -137,8 +164,8 @@ public class Modelo {
     public void eliminarSuministro(Suministro suministro) {
         suministroDAO.eliminar(suministro);
     }
-    public void modificarSuministro(Suministro suministro) {
-        suministroDAO.modificar(suministro);
+    public void modificarSuministro(Suministro suministroNuevo, Suministro suministroViejo) {
+        suministroDAO.modificar(suministroNuevo, suministroViejo);
     }
     public ArrayList<Suministro> obtenerTodosSuministros() {
         return (ArrayList<Suministro>) suministroDAO.obtenerTodos();

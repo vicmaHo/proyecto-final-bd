@@ -55,6 +55,8 @@ public class PrendaDAOImpl implements PrendaDAO {
             stat.setString(5, prenda.getTipoTela());
             stat.setString(6, prenda.getPrecioVenta());
             stat.setString(7, prenda.getSexo());
+            stat.setInt(8, prenda.getNumPedido());
+            stat.setInt(9, prenda.getIdPrenda());
             stat.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
