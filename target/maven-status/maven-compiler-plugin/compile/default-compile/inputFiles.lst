@@ -1,4 +1,5 @@
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\datechooser\Years.java
+C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Usuario.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\implementaciones\SuministroDAOImpl.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Modelo.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\datechooser\DateChooser.java
@@ -17,11 +18,13 @@ C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\mod
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\datechooser\EventDateChooser.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\VistaRegistroEncargos.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\implementaciones\UniformeDAOImpl.java
+C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\UsuarioDAO.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Telefono.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Prenda.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\DAO.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Proveedor.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\datechooser\Prueba.java
+C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\controller\Controlador.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\implementaciones\TelefonoDAOImpl.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Suministro.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\MateriasPrimas.java
@@ -45,6 +48,7 @@ C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\vie
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\SuministroDAO.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\Colegio.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\implementaciones\ClienteDAOImpl.java
+C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\implementaciones\UsuarioDaoImpl.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\VistaRegistroUsuarios.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\model\dao\ProveedorDAO.java
 C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\src\main\java\view\VistaEncargos.java

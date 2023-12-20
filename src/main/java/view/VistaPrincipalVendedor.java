@@ -23,7 +23,7 @@ public class VistaPrincipalVendedor extends javax.swing.JFrame {
     
     public VistaPrincipalVendedor() {
         initComponents();
-        iniciarlizarContenido();
+        iniciarVistaPrincipal();
         
     }
     
@@ -36,23 +36,33 @@ public class VistaPrincipalVendedor extends javax.swing.JFrame {
     }
     
     // Cambio entre paneles (Implementacion temporal)
-    private void iniciarlizarContenido(){
-        agregarJPanel(new VistaInicioUser(), "INICIO");
-    }
-    
-    // metodo para resumir el mostrar paneles
-    private void agregarJPanel(JPanel p, String titulo){
-        p.setSize(968, 617);
-        p.setLocation(0,0);
+    private void iniciarVistaPrincipal(){
+        VistaInicioUser vistaInicioUser = new VistaInicioUser();
+        vistaInicioUser.setSize(968, 617);
+        vistaInicioUser.setLocation(0,0);
         
         pnContenido.removeAll();
-        pnContenido.add(p, BorderLayout.CENTER);
+        pnContenido.add(vistaInicioUser, BorderLayout.CENTER);
         pnContenido.revalidate();
         pnContenido.repaint();
         
         //Cambio el titulo
-        lbTitulo.setText(titulo);
+        lbTitulo.setText("INICIO");
     }
+    
+    // metodo para resumir el mostrar paneles
+//    private void agregarJPanel(JPanel p, String titulo){
+//        p.setSize(968, 617);
+//        p.setLocation(0,0);
+//        
+//        pnContenido.removeAll();
+//        pnContenido.add(p, BorderLayout.CENTER);
+//        pnContenido.revalidate();
+//        pnContenido.repaint();
+//        
+//        //Cambio el titulo
+//        lbTitulo.setText(titulo);
+//    }
     
 
 
@@ -423,15 +433,15 @@ public class VistaPrincipalVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_pnHeaderMouseDragged
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        agregarJPanel(new VistaClientes(), "CLIENTES");
+        //agregarJPanel(new VistaClientes(), "CLIENTES");
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnEncargosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncargosActionPerformed
-        agregarJPanel(new VistaEncargos(), "ADMINISTRACIÓN DE ENCARGOS");
+        //agregarJPanel(new VistaEncargos(), "ADMINISTRACIÓN DE ENCARGOS");
     }//GEN-LAST:event_btnEncargosActionPerformed
 
     private void btnRegistroEntregasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroEntregasActionPerformed
-        agregarJPanel(new VistaRegistroEncargos(), "REGISTRO ENCARGOS");
+        //agregarJPanel(new VistaRegistroEncargos(), "REGISTRO ENCARGOS");
     }//GEN-LAST:event_btnRegistroEntregasActionPerformed
 
     private void btnRegistroEntregasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroEntregasMouseEntered
@@ -443,7 +453,7 @@ public class VistaPrincipalVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroEntregasMouseExited
 
     private void btnColegiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColegiosActionPerformed
-        agregarJPanel(new VistaColegios(), "COLEGIOS");
+        //agregarJPanel(new VistaColegios(), "COLEGIOS");
     }//GEN-LAST:event_btnColegiosActionPerformed
 
     private void btnEncargosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEncargosMouseEntered
@@ -487,15 +497,15 @@ public class VistaPrincipalVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnColegiosMouseExited
 
     private void lbMenuTitleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbMenuTitleMouseClicked
-        agregarJPanel(new VistaInicioAdmin(), "INICIO");
+        iniciarVistaPrincipal();
     }//GEN-LAST:event_lbMenuTitleMouseClicked
 
     private void btnPrendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrendasActionPerformed
-        agregarJPanel(new VistaPrendas(), "PRENDAS");
+        //agregarJPanel(new VistaPrendas(), "PRENDAS");
     }//GEN-LAST:event_btnPrendasActionPerformed
 
     private void btnUniformesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUniformesActionPerformed
-        agregarJPanel(new VistaUniformes(), "UNIFORMES");
+        //agregarJPanel(new VistaUniformes(), "UNIFORMES");
     }//GEN-LAST:event_btnUniformesActionPerformed
 
     
@@ -550,20 +560,20 @@ public class VistaPrincipalVendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClientes;
-    private javax.swing.JButton btnColegios;
-    private javax.swing.JButton btnEncargos;
+    public javax.swing.JButton btnClientes;
+    public javax.swing.JButton btnColegios;
+    public javax.swing.JButton btnEncargos;
     private javax.swing.JPanel btnExit;
-    private javax.swing.JButton btnPrendas;
-    private javax.swing.JButton btnRegistroEntregas;
-    private javax.swing.JButton btnUniformes;
+    public javax.swing.JButton btnPrendas;
+    public javax.swing.JButton btnRegistroEntregas;
+    public javax.swing.JButton btnUniformes;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lbBienvenida;
+    public javax.swing.JLabel lbBienvenida;
     public javax.swing.JLabel lbExit;
     private javax.swing.JLabel lbMenuTitle;
-    private javax.swing.JLabel lbTitulo;
+    public javax.swing.JLabel lbTitulo;
     private javax.swing.JPanel pnBg;
-    private javax.swing.JPanel pnContenido;
+    public javax.swing.JPanel pnContenido;
     private javax.swing.JPanel pnHeader;
     private javax.swing.JPanel pnMenu;
     private javax.swing.JPanel pnTitulo;

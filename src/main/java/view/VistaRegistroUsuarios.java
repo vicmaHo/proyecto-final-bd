@@ -55,7 +55,15 @@ public class VistaRegistroUsuarios extends javax.swing.JPanel {
             new String [] {
                 "ID", "Usuario", "Contraseña", "Rol"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblUsuarios);
 
         btnEliminarUsuario.setText("Eliminar Usuario");

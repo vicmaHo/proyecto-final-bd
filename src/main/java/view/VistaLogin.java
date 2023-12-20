@@ -282,7 +282,7 @@ public class VistaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordMousePressed
 
     private void btnLoginLBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginLBMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Usuario: "+ txtUsername.getText() + "\nContraseña: " + String.valueOf(txtPassword.getPassword()), "Datos", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        //javax.swing.JOptionPane.showMessageDialog(this, "Usuario: "+ txtUsername.getText() + "\nContraseña: " + String.valueOf(txtPassword.getPassword()), "Datos", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnLoginLBMouseClicked
 
     /**
