@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.prendas.AppTest" time="0.097" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.prendas.AppTest" time="0.066" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\test-classes;C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\classes;C:\Users\Victor\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Victor\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Victor\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE190\AbsoluteLayout-RELEASE190.jar;C:\Users\Victor\.m2\repository\com\formdev\flatlaf\3.2.5\flatlaf-3.2.5.jar;"/>
+    <property name="java.class.path" value="C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\test-classes;C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\classes;C:\Users\Victor\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Victor\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Victor\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE190\AbsoluteLayout-RELEASE190.jar;C:\Users\Victor\.m2\repository\com\formdev\flatlaf\3.2.5\flatlaf-3.2.5.jar;C:\Users\Victor\.m2\repository\org\postgresql\postgresql\42.7.1\postgresql-42.7.1.jar;C:\Users\Victor\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;"/>
     <property name="java.vm.vendor" value="OpenLogic"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="CO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\OpenLogic\jdk-17.0.8.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Victor\AppData\Local\Temp\surefire8009093253357808243\surefirebooter10089586529968232653.jar C:\Users\Victor\AppData\Local\Temp\surefire8009093253357808243 2023-12-15T22-38-41_486-jvmRun1 surefire16068432944296236042tmp surefire_02615586710312060791tmp"/>
+    <property name="sun.java.command" value="C:\Users\Victor\AppData\Local\Temp\surefire8007819627107179490\surefirebooter8131906830696246410.jar C:\Users\Victor\AppData\Local\Temp\surefire8007819627107179490 2023-12-19T21-04-35_493-jvmRun1 surefire9346802143364110444tmp surefire_014896352048581978921tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\test-classes;C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\classes;C:\Users\Victor\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Victor\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Victor\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE190\AbsoluteLayout-RELEASE190.jar;C:\Users\Victor\.m2\repository\com\formdev\flatlaf\3.2.5\flatlaf-3.2.5.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\test-classes;C:\Users\Victor\Documents\Programacion\ProyectoPrendas\prendas\target\classes;C:\Users\Victor\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Victor\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Victor\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE190\AbsoluteLayout-RELEASE190.jar;C:\Users\Victor\.m2\repository\com\formdev\flatlaf\3.2.5\flatlaf-3.2.5.jar;C:\Users\Victor\.m2\repository\org\postgresql\postgresql\42.7.1\postgresql-42.7.1.jar;C:\Users\Victor\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Victor"/>
     <property name="user.language" value="es"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Victor\AppData\Local\Temp\surefire8009093253357808243\surefirebooter10089586529968232653.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Victor\AppData\Local\Temp\surefire8007819627107179490\surefirebooter8131906830696246410.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8+7-adhoc..jdk17u"/>
@@ -58,5 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.prendas.AppTest" time="0.003"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.prendas.AppTest" time="0.002"/>
 </testsuite>

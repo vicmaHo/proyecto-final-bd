@@ -1,5 +1,6 @@
 
 import com.formdev.flatlaf.FlatLightLaf;
+import model.Modelo;
 import view.VistaLogin;
 import view.VistaPrincipalAdmin;
 import view.VistaPrincipalVendedor;
@@ -25,5 +26,7 @@ public class App
       
         //vistaVendedor.setVisible(true);
         vista2.setVisible(true);
+
+        
     }
 }
