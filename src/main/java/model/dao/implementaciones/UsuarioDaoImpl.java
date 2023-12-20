@@ -52,13 +52,15 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public void modificar(Usuario t) {
+        System.out.println(t.toString());
         try (PreparedStatement stat = conn.prepareStatement(UPDATE)) {
-            stat.setString(2, t.getNombre());
-            stat.setString(3, t.getContrasena());
-            stat.setString(4, t.getTipo() );
-            stat.setInt(1, t.getId());
+            stat.setString(1, t.getNombre());
+            stat.setString(2, t.getContrasena());
+            stat.setString(3, t.getTipo() );
+            stat.setInt(4, t.getId());
             stat.executeUpdate();
         } catch (SQLException ex) {
+            System.out.println("El error es aca");
             System.out.println(ex.getMessage());
         }
     }
